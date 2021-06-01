@@ -30,7 +30,7 @@ handleChange = (e) => {
 handleSubmit = (e) => {
   e.preventDefault();
 
-  axios.get('')
+  axios.get('https://api.github.com/user/followers')
   .then(resp => {
     this.setState({
       users: resp.data
