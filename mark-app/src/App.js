@@ -4,52 +4,21 @@ import axios from "axios";
 
 class App extends React.Component {
   state = {
-    users: [],
+    user: "KrupDat2020",
     followers: [],
   };
 
-  componentDidMount() {
-    axios
-      .get("https://api.github.com/user")
-      .then((resp) => {
-        this.setState({
-          users: resp.data,
-        });
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }
-}
-handleChange = (e) => {
-  this.setState({
-    followers: e.target.value
-  });
-}
-
-handleSubmit = (e) => {
-  e.preventDefault();
-
-  axios.get('https://api.github.com/user/followers')
-  .then(resp => {
-    this.setState({
-      users: resp.data
-    });
-  })
-  .catch(err => {
-    console.log(err);
-  });
-}
-
   render() {
-  return(<div className='App'>
-  <h1>Mark's GitHub Page</h1>
-  <form on submit = {this.handleSubmit}>
-    <input value= {this.state.user} onChange= {this.handleChange}/>
-    <button>Get Followers</button>
-  </form>
-  </div>
-  )
+    return (
+      <div className="App">
+        <h1>KrupDat2020's GitHub Page</h1>
+        <form>
+          <input />
+          <button>Find Followers</button>
+        </form>
+      </div>
+    );
+  }
 }
 
 export default App;
